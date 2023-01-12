@@ -50,7 +50,6 @@ export const PlasmicHomepage__ArgProps = new Array<ArgPropType>();
 export type PlasmicHomepage__OverridesType = {
   root?: p.Flex<"div">;
   first?: p.Flex<typeof First>;
-  freeBox?: p.Flex<"div">;
 };
 
 export interface DefaultHomepageProps {
@@ -109,12 +108,6 @@ function PlasmicHomepage__RenderFunc(props: {
             data-plasmic-override={overrides.first}
             className={classNames("__wab_instance", sty.first)}
           />
-
-          <div
-            data-plasmic-name={"freeBox"}
-            data-plasmic-override={overrides.freeBox}
-            className={classNames(projectcss.all, sty.freeBox)}
-          />
         </div>
       </div>
     </React.Fragment>
@@ -122,9 +115,8 @@ function PlasmicHomepage__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "first", "freeBox"],
-  first: ["first"],
-  freeBox: ["freeBox"]
+  root: ["root", "first"],
+  first: ["first"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -132,7 +124,6 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   first: typeof First;
-  freeBox: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -197,7 +188,6 @@ export const PlasmicHomepage = Object.assign(
   {
     // Helper components rendering sub-elements
     first: makeNodeComponent("first"),
-    freeBox: makeNodeComponent("freeBox"),
 
     // Metadata about props expected for PlasmicHomepage
     internalVariantProps: PlasmicHomepage__VariantProps,

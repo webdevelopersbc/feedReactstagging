@@ -13,13 +13,12 @@
 .first:global(.__wab_instance):global(.__wab_instance) {
   position: relative;
   margin-bottom: 0px;
+  height: 378px;
+  max-width: 1069px;
+  flex-shrink: 0;
 }
-.freeBox {
-  display: block;
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  min-width: 0;
-  padding: 8px;
+@media (min-width: 0px) and (max-width: 768px) {
+  .first:global(.__wab_instance):global(.__wab_instance) {
+    flex-shrink: 0;
+  }
 }

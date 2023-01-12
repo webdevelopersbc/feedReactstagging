@@ -55,19 +55,6 @@
           "componentType": "component"
         },
         {
-          "id": "ZSvJdJykEB",
-          "name": "FeedOption",
-          "type": "managed",
-          "projectId": "oAPsVEPE9NjWT8tDm6c68U",
-          "renderModuleFilePath": "plasmic/feed/PlasmicFeedOption.tsx",
-          "importSpec": {
-            "modulePath": "FeedOption.tsx"
-          },
-          "cssFilePath": "plasmic/feed/PlasmicFeedOption.module.css",
-          "scheme": "blackbox",
-          "componentType": "component"
-        },
-        {
           "id": "0aRDxPuCXW",
           "name": "First",
           "type": "managed",
@@ -79,9 +66,34 @@
           "cssFilePath": "plasmic/feed/PlasmicFirst.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "ftTiqKUdVef",
+          "name": "Button",
+          "type": "managed",
+          "projectId": "oAPsVEPE9NjWT8tDm6c68U",
+          "renderModuleFilePath": "plasmic/feed/PlasmicButton.tsx",
+          "importSpec": {
+            "modulePath": "Button.tsx"
+          },
+          "cssFilePath": "plasmic/feed/PlasmicButton.module.css",
+          "scheme": "blackbox",
+          "componentType": "component",
+          "plumeType": "button"
         }
       ],
-      "icons": [],
+      "icons": [
+        {
+          "id": "HWyjlWTytgZ",
+          "name": "ChecksvgIcon",
+          "moduleFilePath": "plasmic/feed/icons/PlasmicIcon__Checksvg.tsx"
+        },
+        {
+          "id": "KuQoqt-2Kl1",
+          "name": "IconIcon",
+          "moduleFilePath": "plasmic/feed/icons/PlasmicIcon__Icon.tsx"
+        }
+      ],
       "images": [],
       "indirect": false,
       "globalContextsFilePath": "",

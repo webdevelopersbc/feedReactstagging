@@ -31,11 +31,15 @@ import {
   deriveRenderOpts,
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
+import Button from "../../Button"; // plasmic-import: ftTiqKUdVef/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
 import projectcss from "./plasmic_feed.module.css"; // plasmic-import: oAPsVEPE9NjWT8tDm6c68U/projectcss
 import sty from "./PlasmicFeedList.module.css"; // plasmic-import: UykUXnw_yz/css
+
+import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: HWyjlWTytgZ/icon
+import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: KuQoqt-2Kl1/icon
 
 export type PlasmicFeedList__VariantMembers = {};
 export type PlasmicFeedList__VariantsArgs = {};
@@ -48,11 +52,9 @@ export const PlasmicFeedList__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicFeedList__OverridesType = {
   root?: p.Flex<"section">;
-  text?: p.Flex<"div">;
   list1?: p.Flex<"div">;
   list2?: p.Flex<"div">;
-  list3?: p.Flex<"div">;
-  list4?: p.Flex<"div">;
+  button?: p.Flex<typeof Button>;
 };
 
 export interface DefaultFeedListProps {
@@ -105,9 +107,11 @@ function PlasmicFeedList__RenderFunc(props: {
       )}
     >
       <div
-        data-plasmic-name={"text"}
-        data-plasmic-override={overrides.text}
-        className={classNames(projectcss.all, projectcss.__wab_text, sty.text)}
+        className={classNames(
+          projectcss.all,
+          projectcss.__wab_text,
+          sty.text__mUlq
+        )}
       >
         {"Feed  List"}
       </div>
@@ -128,43 +132,40 @@ function PlasmicFeedList__RenderFunc(props: {
         {"List 2\n"}
       </div>
 
-      <div
-        data-plasmic-name={"list3"}
-        data-plasmic-override={overrides.list3}
-        className={classNames(projectcss.all, projectcss.__wab_text, sty.list3)}
+      <Button
+        data-plasmic-name={"button"}
+        data-plasmic-override={overrides.button}
+        className={classNames("__wab_instance", sty.button)}
+        link={`/`}
       >
-        {"List 3\n"}
-      </div>
-
-      <div
-        data-plasmic-name={"list4"}
-        data-plasmic-override={overrides.list4}
-        className={classNames(projectcss.all, projectcss.__wab_text, sty.list4)}
-      >
-        {"List 4 \n"}
-      </div>
+        <div
+          className={classNames(
+            projectcss.all,
+            projectcss.__wab_text,
+            sty.text__tPzn2
+          )}
+        >
+          {"Submit"}
+        </div>
+      </Button>
     </p.Stack>
   ) as React.ReactElement | null;
 }
 
 const PlasmicDescendants = {
-  root: ["root", "text", "list1", "list2", "list3", "list4"],
-  text: ["text"],
+  root: ["root", "list1", "list2", "button"],
   list1: ["list1"],
   list2: ["list2"],
-  list3: ["list3"],
-  list4: ["list4"]
+  button: ["button"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "section";
-  text: "div";
   list1: "div";
   list2: "div";
-  list3: "div";
-  list4: "div";
+  button: typeof Button;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -228,11 +229,9 @@ export const PlasmicFeedList = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    text: makeNodeComponent("text"),
     list1: makeNodeComponent("list1"),
     list2: makeNodeComponent("list2"),
-    list3: makeNodeComponent("list3"),
-    list4: makeNodeComponent("list4"),
+    button: makeNodeComponent("button"),
 
     // Metadata about props expected for PlasmicFeedList
     internalVariantProps: PlasmicFeedList__VariantProps,
