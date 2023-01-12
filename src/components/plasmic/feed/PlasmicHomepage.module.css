@@ -10,7 +10,16 @@
   min-height: 0;
   padding: 43px 0px 0px;
 }
-.first:global(.__wab_instance) {
+.first:global(.__wab_instance):global(.__wab_instance) {
   position: relative;
   margin-bottom: 0px;
+}
+.freeBox {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+  padding: 8px;
 }

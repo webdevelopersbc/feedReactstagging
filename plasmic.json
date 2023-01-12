@@ -7,7 +7,7 @@
   },
   "style": {
     "scheme": "css-modules",
-    "defaultStyleCssFilePath": "plasmic/plasmic__default_style.css"
+    "defaultStyleCssFilePath": "plasmic/plasmic__default_style.module.css"
   },
   "images": {
     "scheme": "files",
@@ -64,6 +64,19 @@
             "modulePath": "FeedOption.tsx"
           },
           "cssFilePath": "plasmic/feed/PlasmicFeedOption.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "0aRDxPuCXW",
+          "name": "First",
+          "type": "managed",
+          "projectId": "oAPsVEPE9NjWT8tDm6c68U",
+          "renderModuleFilePath": "plasmic/feed/PlasmicFirst.tsx",
+          "importSpec": {
+            "modulePath": "First.tsx"
+          },
+          "cssFilePath": "plasmic/feed/PlasmicFirst.module.css",
           "scheme": "blackbox",
           "componentType": "component"
         }

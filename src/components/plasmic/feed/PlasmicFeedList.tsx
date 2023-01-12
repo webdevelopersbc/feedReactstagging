@@ -52,6 +52,7 @@ export type PlasmicFeedList__OverridesType = {
   list1?: p.Flex<"div">;
   list2?: p.Flex<"div">;
   list3?: p.Flex<"div">;
+  list4?: p.Flex<"div">;
 };
 
 export interface DefaultFeedListProps {
@@ -134,16 +135,25 @@ function PlasmicFeedList__RenderFunc(props: {
       >
         {"List 3\n"}
       </div>
+
+      <div
+        data-plasmic-name={"list4"}
+        data-plasmic-override={overrides.list4}
+        className={classNames(projectcss.all, projectcss.__wab_text, sty.list4)}
+      >
+        {"List 4 \n"}
+      </div>
     </p.Stack>
   ) as React.ReactElement | null;
 }
 
 const PlasmicDescendants = {
-  root: ["root", "text", "list1", "list2", "list3"],
+  root: ["root", "text", "list1", "list2", "list3", "list4"],
   text: ["text"],
   list1: ["list1"],
   list2: ["list2"],
-  list3: ["list3"]
+  list3: ["list3"],
+  list4: ["list4"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -154,6 +164,7 @@ type NodeDefaultElementType = {
   list1: "div";
   list2: "div";
   list3: "div";
+  list4: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -221,6 +232,7 @@ export const PlasmicFeedList = Object.assign(
     list1: makeNodeComponent("list1"),
     list2: makeNodeComponent("list2"),
     list3: makeNodeComponent("list3"),
+    list4: makeNodeComponent("list4"),
 
     // Metadata about props expected for PlasmicFeedList
     internalVariantProps: PlasmicFeedList__VariantProps,
